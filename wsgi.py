@@ -8,7 +8,7 @@ application = Flask(__name__)
 @application.route("/")
 def hello():
     ts = time.time()
-    with open('/mnt/ceclivinontheedge/cec.log', mode='w') as outfile:
+    with open('/mnt/ceclivinontheedge/cec.log', mode='a') as outfile:
         outfile.write(socket.gethostname())
         outfile.write('\t')
         outfile.write(datetime.datetime.fromtimestamp(ts).strftime('%d.%m.%Y %H:%M:%S'))
