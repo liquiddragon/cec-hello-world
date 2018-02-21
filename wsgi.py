@@ -16,6 +16,14 @@ def hello():
 
     return "Hello World! Greetings from "+socket.gethostname()+"\n"
 
+@application.route("/accesslog")
+def viewlog():
+    output = ""
+    with open('/mnt/ceclivinontheedge/cec.log', mode='r') as infile:
+        for line in infile:
+            output += output + line + "<br/>"
+
+    return output
 
 if __name__ == "__main__":
     application.run()
