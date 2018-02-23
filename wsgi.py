@@ -14,7 +14,10 @@ def hello():
         outfile.write(datetime.datetime.fromtimestamp(ts).strftime('%d.%m.%Y %H:%M:%S'))
         outfile.write('\n')
 
-    return "Hello World! Greetings from "+socket.gethostname()+"\n"
+    output = '<a href="/accesslog">Log</a><br/>'
+    output += 'Hello World! Greetings from '+socket.gethostname()+'\n <br/>'
+
+    return output
 
 @application.route("/accesslog")
 def viewlog():
